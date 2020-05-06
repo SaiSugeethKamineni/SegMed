@@ -10,15 +10,6 @@ from __future__ import print_function
 import time
 import numpy as np
 import tensorflow as tf
-from keras.backend.tensorflow_backend import set_session
-from keras import layers
-from keras.models import Model
-from keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D, core, Dropout
-from keras.optimizers import Adam
-from keras.callbacks import ModelCheckpoint, TensorBoard, Callback
-from keras import backend as K
-from keras.utils import plot_model
-from keras.optimizers import SGD
 import sys
 import os
 import random
@@ -29,6 +20,8 @@ from scipy.ndimage.filters import gaussian_filter
 from skimage.transform import rescale
 from skimage import io
 import matplotlib.pyplot as plt
+from tensorflow_core.python.keras.callbacks import ModelCheckpoint, Callback, TensorBoard
+
 sys.path.append('./')
 import utils.help_functions as hf
 import utils.extract_patches as ep
@@ -152,6 +145,7 @@ def main(config_file):
                                    mode='auto',
                                    save_best_only=True)
     tensorboard = TensorBoard(log_dir=experiment_path + '/logs')
+
  #   tensorboard = TensorBoard(log_dir=experiment_path + '/logs', batch_size=batch_size)
     # def step_decay(epoch):
     #     lrate = 0.01 #the initial learning rate (by default in keras)

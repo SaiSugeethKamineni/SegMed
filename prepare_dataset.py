@@ -119,5 +119,5 @@ def prepare_test_dataset():
 
 if __name__ == '__main__':
 
-    #prepare_training_dataset()
+    prepare_training_dataset()
     prepare_test_dataset()

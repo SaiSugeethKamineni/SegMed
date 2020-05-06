@@ -10,11 +10,12 @@
 from __future__ import print_function
 import numpy as np
 import matplotlib as mpl
+from tensorflow_core.python.keras.models import model_from_json
+
 mpl.use('Agg')
 from matplotlib import pyplot as plt
 # Keras
-from keras.models import model_from_json
-from keras.models import Model
+
 import tensorflow as tf
 # scikit learn
 from sklearn.metrics import roc_curve
@@ -51,8 +52,8 @@ full_img_height = test_images.shape[2]
 full_img_width = test_images.shape[3]
 
 # the masks
-test_masks_file = config['test_masks_file']
-test_border_masks = hf.load_hdf5(test_masks_file)
+#test_masks_file = config['test_masks_file']
+#test_border_masks = hf.load_hdf5(test_masks_file)
 test_gt_file = config['test_gt_file']
 
 # dimension of the patches

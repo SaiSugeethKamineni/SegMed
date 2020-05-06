@@ -37,7 +37,7 @@ def write_hdf5(arr, outfile):
 
 def get_dataset(imgs_dir, gt_dir, masks_dir, Nimgs, height, width, channels, category):
     imgs = np.empty((Nimgs, height, width, channels))
-    gt = np.empty((Nimgs, height, width,channels))
+    gt = np.empty((Nimgs, height, width))
     border_masks = np.empty((Nimgs, height, width))
     if not os.walk(imgs_dir):
         print("directory don't exist")
@@ -80,8 +80,8 @@ def get_dataset(imgs_dir, gt_dir, masks_dir, Nimgs, height, width, channels, cat
 
     imgs = np.transpose(imgs, (0, 3, 1, 2))
     assert (imgs.shape == (Nimgs, channels, height, width))
-    gt = np.reshape(gt, (Nimgs, 3, height, width))
-    assert (gt.shape == (Nimgs, 3, height, width))
+    gt = np.reshape(gt, (Nimgs, 1, height, width))
+    assert (gt.shape == (Nimgs, 1, height, width))
     border_masks = np.reshape(border_masks, (Nimgs, 1, height, width))
 
     # assert (border_masks.shape == (Nimgs, 1, height, width))
@@ -119,12 +119,17 @@ def group_images(data, per_row):
 # visualize image (as PIL image, NOT as matplotlib!)
 def visualize(data, filename):
     assert (len(data.shape) == 3)  # height*width*channels
+    print(data.shape)
+    print(np.unique(data))
     # print data
     if data.shape[2] == 1:  # in case it is black and white
+
         data = np.reshape(data, (data.shape[0], data.shape[1]))
     if np.max(data) > 1:
+
         img = Image.fromarray(data.astype(np.uint8))  # the image is already 0-255
     else:
+
         img = Image.fromarray((data * 255).astype(np.uint8))  # the image is between 0-1
     img.save(filename + '.png')
     return img

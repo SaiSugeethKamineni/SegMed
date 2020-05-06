@@ -1,17 +1,30 @@
-from keras import layers
-from keras.models import Model
-from keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D, core, Dropout
-from keras.layers import Conv2DTranspose
-from keras.layers.normalization import BatchNormalization
-from keras.optimizers import Adam
-from keras.layers.core import Activation
-from keras.callbacks import ModelCheckpoint, TensorBoard, Callback
-from keras import backend as K
-from keras.utils import plot_model
-from keras.optimizers import SGD
-from keras.activations import selu, relu
-from keras.layers.core import Lambda
+
+#
+# from keras import layers
+# from keras.models import Model
+# from keras.layers import Input, Conv2D, MaxPooling2D, UpSampling2D, core, Dropout
+# from keras.layers import Conv2DTranspose
+# from keras.layers.normalization import BatchNormalization
+# from keras.optimizers import Adam
+# from keras.layers.core import Activation
+# from keras.callbacks import ModelCheckpoint, TensorBoard, Callback
+# from keras import backend as K
+# from keras.utils import plot_model
+# from keras.optimizers import SGD
+# from keras.activations import selu, relu
+# from keras.layers.core import Lambda
+#
+#
+
 import tensorflow as tf
+from tensorflow_core.python.keras import layers
+from tensorflow_core.python.keras.engine.input_layer import Input
+from tensorflow_core.python.keras.layers import core
+from tensorflow_core.python.keras.layers.convolutional import Conv2D, UpSampling2D
+from tensorflow_core.python.keras.layers.core import Lambda, Dropout
+from tensorflow_core.python.keras.layers.pooling import MaxPooling2D
+from tensorflow_core.python.keras.models import Model
+from tensorflow_core.python.keras.optimizer_v2.adam import Adam
 
 
 def make_parallel(model, gpu_count):
@@ -97,6 +110,7 @@ def unet_backbone(inputs, act):
     conv1 = Dropout(0.2)(conv1)
     conv1 = Conv2D(32, (3, 3), activation=act, padding='same', data_format='channels_first')(conv1)
     conv1 = Dropout(0.2)(conv1)
+
     pool1 = MaxPooling2D(pool_size=(2, 2), data_format='channels_first')(conv1)
 
     conv2 = Conv2D(64, (3, 3), activation=act, padding='same', data_format='channels_first')(pool1)

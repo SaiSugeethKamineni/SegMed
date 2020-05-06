@@ -5,7 +5,7 @@
 ##################################################
 from __future__ import print_function
 import os, sys
-
+import tensorflow as tf
 from utils.help_functions import parse_config
 
 
@@ -16,6 +16,7 @@ if len(sys.argv)>1:
         print('The config file does not exist')
         sys.exit()
 else:
+
     config_file = './configuration.txt'
 config = parse_config(config_file)
 #===========================================
@@ -41,4 +42,5 @@ if nohup:
     os.system(run_GPU +' nohup python -u ./nuclei_test.py ' + config_file +' > ' + result_dir + '/' + name_experiment+'_prediction.nohup')
 else:
     print("Run the prediction on GPU (no nohup)")
+
     os.system(run_GPU +'& python -u ./nuclei_test.py ' + config_file)
