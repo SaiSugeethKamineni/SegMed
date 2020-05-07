@@ -52,7 +52,7 @@ def get_dataset(imgs_dir, gt_dir, masks_dir, Nimgs, height, width, channels, cat
         
         
         """
-        img_file = str(i+1) + '_sample.tiff'
+        img_file = str(i+1) + '_sample.png'
         # original
         print("original image: ", img_file)
         img = Image.open(imgs_dir + img_file)

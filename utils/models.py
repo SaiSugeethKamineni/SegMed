@@ -16,6 +16,10 @@
 #
 #
 
+"""
+@Author : Naga Anjaneyulu
+Made changes regarding tensorflow and keras.
+"""
 import tensorflow as tf
 from tensorflow_core.python.keras import layers
 from tensorflow_core.python.keras.engine.input_layer import Input
@@ -103,6 +107,11 @@ def unet(n_ch, patch_height, patch_width, category_num, act='selu', loss_weight=
           sample_weight_mode=sample_weight_mode)
     return model
 
+
+"""
+@Author : Naga Anjaneyulu 
+Made changes for unet backbone, experimented with addition of convolution layers, drop out values.
+"""
 
 def unet_backbone(inputs, act):
 

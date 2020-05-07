@@ -23,7 +23,7 @@ config = parse_config(config_file)
 #name of the experiment!!
 name_experiment = config['name']
 nohup = config['test_nohup']   #std output on log file?
-run_GPU = 'set THEANO_FLAGS="mode=FAST_RUN,device=gpu,floatX=float32" '
+run_GPU = 'set THEANO_FLAGS="mode=FAST_RUN,device=gpu:1,floatX=float32" '
 
 
 #create a folder for the results if not existing already
