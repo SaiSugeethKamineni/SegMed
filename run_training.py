@@ -24,7 +24,7 @@ dataset = config['dataset']
 nohup = config['train_nohup']  # std output on log file?
 fine_tuning = config['fine_tuning']
 pretrained_model = config['pretrain_model']
-run_GPU = 'set THEANO_FLAGS="mode=FAST_RUN,device=gpu,floatX=float32" '
+run_GPU = 'set THEANO_FLAGS="mode=FAST_RUN,device=gpu:1,floatX=float32" '
 net = config['net']
 
 # create a folder for the results
