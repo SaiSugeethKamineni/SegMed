@@ -5,7 +5,7 @@ This Nuclei boundary model from [1] is used to apply on various datasets after r
 
 
 # References
-[1] Cui, Yuxin, et al. “A Deep Learning Algorithm for One-Step Contour Aware Nuclei Segmentation of Histopathology Images.” Medical \& Biological Engineering \& Computing, vol. 57, no. 9, 2019, pp. 2027–2043., doi:10.1007/s11517-019-02008-8.https://arxiv.org/pdf/1803.02786.pdf
+[1] Cui, Yuxin, et al. “A Deep Learning Algorithm for One-Step Contour Aware Nuclei Segmentation of Histopathology Images.” Medical \& Biological Engineering \& Computing, vol. 57, no. 9, 2019, pp. 2027–2043., doi:10.1007/s11517-019-02008-8. <br>https://arxiv.org/pdf/1803.02786.pdf
 
 
 
