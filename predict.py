@@ -526,7 +526,7 @@ if __name__ == '__main__':
     # Create model configuration in inference mode
     config = KaggleBowlConfig()
     config.GPU_COUNT = 1
-    config.IMAGES_PER_GPU = 1
+    config.IMAGES_PER_GPU = 2
     config.BATCH_SIZE = 1
     config.display()
 
@@ -537,14 +537,6 @@ if __name__ == '__main__':
     model = get_model(config, model_path='../codes/mask_rcnn.h5')
 
 
-    # # Ininitialize validation dataset
-    # train_path = 'stage1_train/'
-    # train_list, val_list = train_validation_split(
-    #     train_path, seed=11, test_size=0.1)
-    # dataset_val = KaggleDataset()
-    # dataset_val.load_shapes(val_list, train_path)
-    # dataset_val.prepare()
-
     # initialize stage 1  testing dataset
     dataset_val = KaggleDataset()
     val_path = 'stage1_test/'
@@ -554,10 +546,6 @@ if __name__ == '__main__':
     # Evaluate the model performance and plot boundaries for the predictions
     eval_n_plot_val(model, config, dataset_val, save_plots=True)
 
-    # Predict and plot boundaries for stage1 test
-    # pred_n_plot_test(model, config, test_path='stage1_test/', save_plots=True)
-    # Predict and plot boundaries for stage2 test
-    # pred_n_plot_test(model, config, test_path='stage2_test_final/', save_plots=True)
 
     # Save supercomputer log file locally
     if 'PBS_JOBID' in os.environ.keys():

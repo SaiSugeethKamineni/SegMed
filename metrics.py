@@ -4,6 +4,10 @@ import cv2
 from scipy.ndimage.morphology import binary_fill_holes
 import utils
 
+"""
+@author: Akhil
+written function for whole image iou and pixel wise precision"""
+
 def mean_iou(true_masks, pred_masks):
     """
     Due to https://www.kaggle.com/wcukierski/example-metric-implementation

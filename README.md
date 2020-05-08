@@ -9,6 +9,8 @@ I modified [Inom Mirzaev's](https://github.com/mirzaevinom/data_science_bowl_201
 
 ### Model and Training
 
+Can use `run_on_gpu.py` to run any of the following codes on gpu.( need to update the corresponding python file in code)
+
 1. Run `python augment_preprocess.py` to pre-process external data and create mosaics from the dataset. (You can skip this step if you only want to train on provided train set)
 
 2. Run `python train.py` to train the model. 

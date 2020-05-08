@@ -6,7 +6,10 @@ Copyright (c) 2017 Matterport, Inc.
 Licensed under the MIT License (see LICENSE for details)
 Written by Waleed Abdulla
 """
-
+"""
+Made Necessary changes to make it compatiable with Tensorflow==2.0
+@autor: Akhil Mokkapati
+"""
 import sys
 import os
 import logging

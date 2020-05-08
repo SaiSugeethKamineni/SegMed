@@ -7,7 +7,10 @@ automate nucleus detection from biomedical images.
 author: Inom Mirzaev
 github: https://github.com/mirzaevinom
 """
-
+"""
+Modified the training strategy based on our experiments
+@author: Akhil Mokkapati
+"""
 from config import *
 import h5py
 
@@ -161,24 +164,13 @@ if __name__ == '__main__':
 
     print('Loading weights from ', weights_path)
 
-    # Train the model for 75 epochs
+    # Train the model for 100 epochs
 
     model.train(dataset_train, dataset_val,
                 learning_rate=1e-4,
-                epochs=1,
-                # verbose=2,
+                epochs=100,
                 layers='all')
 
-    # model.train(dataset_train, dataset_val,
-    #             learning_rate=1e-5,
-    #             epochs=50,
-    #             #verbose=2,
-    #             layers='all')
 
-    # model.train(dataset_train, dataset_val,
-    #             learning_rate=1e-6,
-    #             epochs=75,
-    #            # verbose=2,
-    #             layers='all')
 
     print('Elapsed time', round((time.time() - start)/60, 1), 'minutes')
