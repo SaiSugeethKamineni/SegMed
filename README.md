@@ -1,5 +1,5 @@
 # Nuclei Boundary Model
-This Nuclei boundary model from [1] is used to apply on various datasets after required modifications. 
+This Nuclei boundary model from [1] is used to trained on various datasets after required modifications. 
 1. Datasets folder consists  MonuSeg,PSB,TNBC datasets for training and testing.
 2. Experiments folder consists three models : Model1 - PSB Dataset , Model2 - TNBC Dataset , Model3 - MonuSeg Dataset. 
 
