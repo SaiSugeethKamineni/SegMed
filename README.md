@@ -1,11 +1,20 @@
-# nuclei_segmentation
+# Nuclei Boundary Model
+This Nuclei boundary model from [1] is used to apply on various datasets after required modifications. 
+1. Datasets folder consists  MonuSeg,PSB,TNBC datasets for training and testing.
+2. Experiments folder consists three models : Model1 - PSB Dataset , Model2 - TNBC Dataset , Model3 - MonuSeg Dataset. 
+
+
+# References
+[1] Cui, Yuxin, et al. “A Deep Learning Algorithm for One-Step Contour Aware Nuclei Segmentation of Histopathology Images.” Medical \& Biological Engineering \& Computing, vol. 57, no. 9, 2019, pp. 2027–2043., doi:10.1007/s11517-019-02008-8. https://arxiv.org/pdf/1803.02786.pdf
+
+
 
 ## Requirements
 
-* python 2.7
+* python 3.5
 * numpy
 * keras
-* tensorflow
+* tensorflow-gpu
 * scipy
 * cv2
 * skimage
