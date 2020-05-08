@@ -16,10 +16,7 @@
 #
 #
 
-"""
-@Author : Naga Anjaneyulu
-Made changes regarding tensorflow and keras.
-"""
+
 import tensorflow as tf
 from tensorflow_core.python.keras import layers
 from tensorflow_core.python.keras.engine.input_layer import Input
@@ -30,7 +27,10 @@ from tensorflow_core.python.keras.layers.pooling import MaxPooling2D
 from tensorflow_core.python.keras.models import Model
 from tensorflow_core.python.keras.optimizer_v2.adam import Adam
 
-
+"""
+@Author : Naga Anjaneyulu
+Made changes regarding tensorflow and keras , supports tensorflow-gpu.
+"""
 def make_parallel(model, gpu_count):
     def get_slice(data, idx, parts):
         shape = tf.shape(data)

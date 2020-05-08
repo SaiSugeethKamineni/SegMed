@@ -22,7 +22,7 @@ def generate_gt(filename,image):
     cv2.drawContours(image, contours, -1, (0, 255, 0), 3) 
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) 
     cv2.destroyAllWindows()
-    cv2.imwrite(filename, gray) 
+    cv2.imwrite(filename, image) 
     print(np.unique(gray))
 
 
@@ -103,22 +103,20 @@ def preprocess_external_data(annot_path, images_path,gt_path):
 
 if __name__ == "__main__":
     
-
-      count = 1
-      for root, dirs, files in os.walk('D:\\Spring2020\\CV\\Project\\Workspace\\Model23\\SegMed\\datasets\\MonuSeg\\test\\gt\\', topdown=False):
-          for name in files:
-              image = cv2.imread(name)
-              cv2.waitKey(0)
-              #filename = str(count)+'_gt.bmp'
-              x = np.asarray(image)
-              print(np.unique(x))
-              #x[x > 0 ] = 255
-              #image =  x.astype(np.uint8)
-              #generate_gt(name,image)
-              #label_pixels(name,image)
-              #gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-              #cv2.imwrite(name,gray)
-              count += 1
+       count = 0
+       name = '37400_22700_ConfidenceMap.png'
+       image = cv2.imread(name)
+       cv2.waitKey(0)
+       filename = 'dummy.png'
+       x = np.asarray(image)
+       #print(np.unique(x))
+       x[x > 0 ] = 255
+       image =  x.astype(np.uint8)
+       generate_gt(filename,image)
+       #label_pixels(name,image)
+       #gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+       #cv2.imwrite(name,gray)
+       count += 1
 
 #    annotation_path = 'D:\\Spring2020\\CV\\Project\\Workspace\\Model23\\SegMed\\datasets\\MonuSeg\\test\\gt_an\\'
 #    images_path = 'D:\\Spring2020\\CV\\Project\\Workspace\\Model23\\SegMed\\datasets\\MonuSeg\\test\\images\\'

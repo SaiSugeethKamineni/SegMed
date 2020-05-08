@@ -182,10 +182,10 @@ print("Gtruth imgs shape: ", gt_imgs.shape)
 gt_imgs = hf.label2rgb(gt_imgs, category_num)
 
 for i in range(orig_imgs.shape[0]):
-    hf.visualize(np.transpose(orig_imgs[i,:,:,:], (1,2,0)), test_result + str(i) + "_originals")
+    #hf.visualize(np.transpose(orig_imgs[i,:,:,:], (1,2,0)), test_result + str(i) + "_originals")
     hf.visualize(np.transpose(pred_imgs[i,:,:,:], (1,2,0)), test_result + str(i) + "_predictions")
     #hf.visualize(np.transpose(pred_patches[i, :, :, :], (1, 2, 0)), test_result + str(i) + "_predictions")
-    hf.visualize(np.transpose(gt_imgs[i,:,:,:], (1,2,0)), test_result + str(i) + "_groundTruths")
+    #hf.visualize(np.transpose(gt_imgs[i,:,:,:], (1,2,0)), test_result + str(i) + "_groundTruths")
 #
 # for i in range(orig_imgs.shape[0]):
 #     img = orig_imgs[i, 1, :, :]
@@ -201,7 +201,7 @@ for i in range(orig_imgs.shape[0]):
 # # hf.visualize(hf.group_images(pred_imgs, N_visual), path_experiment + str(i) + "_predictions")
 # #
 # # hf.visualize(hf.group_images(gt_imgs, N_visual), path_experiment + str(i) + "_groundTruths")
-#
+
 #
 # # ====== Evaluate the results
 # print("========  Evaluate the results =======================")
@@ -228,8 +228,8 @@ for i in range(orig_imgs.shape[0]):
 # plt.ylabel("TPR (True Positive Rate)")
 # plt.legend(loc="lower right")
 # plt.savefig(test_result + "ROC.png")
-
-
+#
+#
 # # Area under the ROC curve
 # fpr, tpr, thresholds = roc_curve((y_true), y_scores)
 # AUC_ROC = roc_auc_score(y_true, y_scores)
@@ -248,7 +248,7 @@ for i in range(orig_imgs.shape[0]):
 # precision = np.fliplr([precision])[0]  # so the array is increasing (you won't get negative AUC)
 # recall = np.fliplr([recall])[0]  # so the array is increasing (you won't get negative AUC)
 # AUC_prec_rec = np.trapz(precision, recall)
-# print "\nArea under Precision-Recall curve: " + str(AUC_prec_rec)
+# print( "\nArea under Precision-Recall curve: " + str(AUC_prec_rec)
 # prec_rec_curve = plt.figure()
 # plt.plot(recall, precision, '-', label='Area Under the Curve (AUC = %0.4f)' % AUC_prec_rec)
 # plt.title('Precision - Recall curve')
@@ -307,4 +307,4 @@ for i in range(orig_imgs.shape[0]):
 #                 + "\nPRECISION: " + str(precision)
 #                 )
 # file_perf.close()
-
+#

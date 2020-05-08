@@ -35,6 +35,12 @@ def write_hdf5(arr, outfile):
         f.create_dataset("image", data=arr, dtype=arr.dtype)
 
 
+"""
+
+       @author : Naga Anjaneyulu
+       Made changes according to the available data.
+
+"""
 def get_dataset(imgs_dir, gt_dir, masks_dir, Nimgs, height, width, channels, category):
     imgs = np.empty((Nimgs, height, width, channels))
     gt = np.empty((Nimgs, height, width))
@@ -45,13 +51,7 @@ def get_dataset(imgs_dir, gt_dir, masks_dir, Nimgs, height, width, channels, cat
     print("-----------------------------------------------------------------")
     print('read images')
     for i in range(Nimgs):  # list all files, directories in the path
-        """
-        
-        @author : Naga Anjaneyulu
-        Made changes according to the available data.
-        
-        
-        """
+
         img_file = str(i+1) + '_sample.png'
         # original
         print("original image: ", img_file)
@@ -115,15 +115,17 @@ def group_images(data, per_row):
         totimg = np.concatenate((totimg, all_stripe[i]), axis=0)
     return totimg
 
-
+"""
+    Changes regarding generating predicted images.
+"""
 # visualize image (as PIL image, NOT as matplotlib!)
 def visualize(data, filename):
     assert (len(data.shape) == 3)  # height*width*channels
-    print(data.shape)
-    print(np.unique(data))
+
+    data = np.round(data)
     # print data
     if data.shape[2] == 1:  # in case it is black and white
-
+        print("hi")
         data = np.reshape(data, (data.shape[0], data.shape[1]))
     if np.max(data) > 1:
 
