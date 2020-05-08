@@ -1,1 +1,0 @@
-# Processing medical image data
