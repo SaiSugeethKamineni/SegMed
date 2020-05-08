@@ -6,7 +6,7 @@ In this project, we have explored different techniques that cover both conventio
 
 Please find our work at :
 
-1. ![Nuclei Boundary Model] (https://github.com/naga-anjaneyulu/SegMed/tree/segmed01-feature)
-2. Unsupervised SegMed Model
-3. Mask R-CNN Model
-4. Unet2 Model
+1. Nuclei Boundary Model - https://github.com/naga-anjaneyulu/SegMed/tree/segmed01-feature
+2. Unsupervised SegMed Model - https://github.com/naga-anjaneyulu/SegMed/tree/unsu-segmed
+3. Mask R-CNN Model - https://github.com/naga-anjaneyulu/SegMed/tree/mask-rcnn
+4. Unet2 Model  - https://github.com/naga-anjaneyulu/SegMed/tree/unet2-segmed
